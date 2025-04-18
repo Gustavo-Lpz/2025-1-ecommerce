@@ -1,0 +1,29 @@
+
+<div class="container mt-4">
+    <h2>Resumen de Compra</h2>
+  
+    @if (productos.length === 0) {
+      <p>No hay productos para confirmar.</p>
+    } @else {
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th> 
+          </tr>
+        </thead>
+        <tbody>
+          @for (prod of productos; track prod._id) {
+            <tr>
+              <td>{{ prod.name }}</td>
+              <td>{{ prod.quantity }}</td>
+              <td>$ {{ prod.price }}</td> 
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </div> 
+  
+

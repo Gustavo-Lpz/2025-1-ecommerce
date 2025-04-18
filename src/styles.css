@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url('./app/caractersiticas/games.jpg');
+    color: red;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: red;
+    font-weight: 700;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+p{
+    color: red;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+a{
+    color: red;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover{
+    color: red;
+}

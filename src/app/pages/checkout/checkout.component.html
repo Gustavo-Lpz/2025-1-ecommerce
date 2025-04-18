@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="container w-50">
+    <form [formGroup]="product" (ngSubmit)="fnOnSubmit($event)" class="p-4 border rounded shadow bg-light">
+      <h2 class="text-center mb-3">
+        {{ productEditing ? 'Editar Producto' : 'Guardar Dirección de Envío' }}
+      </h2>
+
+      <!-- Cantidad -->
+      <label for="quantity" class="form-label">Cantidad</label>
+      <input type="number" id="quantity" class="form-control mb-3" formControlName="quantity" />
+      @if (product.get('quantity')?.hasError('min') && product.get('quantity')?.touched) {
+        <small class="text-danger">No pueden ser cantidades negativas</small>
+        <br>
+      }
+
+      <!-- Nombre del juego -->
+      <label for="name" class="form-label">Juego</label>
+      <input type="text" id="name" class="form-control mb-3" placeholder="Nombre del Juego" formControlName="name" />
+      @if (product.get('name')?.hasError('required') && product.get('name')?.touched) {
+        <small class="text-danger">Este campo no puede estar vacío</small>
+        <br>
+      }
+
+      <!-- Plataforma -->
+      <div class="mb-3">
+        <label for="platform" class="form-label">Plataforma</label>
+        <select id="platform" class="form-select" formControlName="description">
+          <option selected disabled value="">Selecciona una plataforma</option>
+          <option value="PlayStation">PlayStation</option>
+          <option value="Xbox">Xbox</option>
+          <option value="Switch">Switch</option>
+        </select>
+        @if (product.get('description')?.hasError('required') && product.get('description')?.touched) {
+          <small class="text-danger">Selecciona una plataforma</small>
+        }
+      </div>
+
+
+      <!-- Destinatario -->
+      <label for="destinatario" class="form-label">Destinatario</label>
+      <input type="text" id="destinatario" class="form-control mb-3" placeholder="Nombre del destinatario" formControlName="destinatario" />
+      @if (product.get('destinatario')?.hasError('required') && product.get('destinatario')?.touched) {
+        <small class="text-danger">Este campo es obligatorio</small>
+        <br>
+      }
+
+      <!-- Dirección -->
+      <label for="address" class="form-label">Dirección</label>
+      <input type="text" id="address" class="form-control mb-3" placeholder="Ingresa tu Dirección" formControlName="address" />
+      @if (product.get('address')?.hasError('required') && product.get('address')?.touched) {
+        <small class="text-danger">Ingresa una dirección válida</small>
+        <br>
+      }
+      
+
+      <!-- Método de Pago -->
+      <div class="mb-3">
+        <label for="metodoPago" class="form-label">Método de Pago</label>
+        <select id="metodoPago" class="form-select" formControlName="paymentMethod">
+          <option selected disabled value="">Selecciona una opción</option>
+          <option value="Débito">Tarjeta de Débito</option>
+          <option value="Crédito">Tarjeta de Crédito</option>
+        </select>
+        @if (product.get('paymentMethod')?.hasError('required') && product.get('paymentMethod')?.touched) {
+          <small class="text-danger">Selecciona un método de pago</small>
+        }
+      </div>
+
+            <!-- Precio -->
+            <label for="price" class="form-label">Precio</label>
+            <input type="text" id="price" class="form-control mb-3" placeholder="Precio" formControlName="price" />
+            @if (product.get('price')?.hasError('required') && product.get('price')?.touched) {
+              
+              <br>
+            }
+
+     
+      <!-- <div class="mb-3">
+        <label for="img" class="form-label">Imagen</label>
+        <input class="form-control" type="file" id="img" (change)="onFileChange($event)" />
+      </div> -->
+
+   
+      <button [disabled]="!product.valid" type="submit" class="btn btn-primary w-100">Guardar</button>
+
+     
+      <div class="text-center mt-3">
+        {{ product.valid ? 'Listo para Agregar' : 'Aún NO lo puedes Agregar' }}
+      </div>
+    </form>
+  </div>
+</div>

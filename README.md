@@ -51,27 +51,15 @@ Demostrar el dominio de los conceptos vistos durante el curso mediante la creaci
    ```bash
    ng build --base-href "/2025-1-ecommerce/"
    ```
-
-2. Modifica el archivo angular.json para que tenga la sig linea
-   ```
-      "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
-        }
-   ```
-   este debe estar a la altura de test
-3. agregar la siguiente linea en la seccion de scripts en package.json
-```
- "deploy":"ng deploy --base-href=/2025-1-ecommerce/" 
-```
-4. Instala el paquete para desplegar:
+2. Instala el paquete para desplegar:
    ```bash
    ng add angular-cli-ghpages
    ```
-5. Despliega el proyecto:
+3. Despliega el proyecto:
    ```bash
    npx angular-cli-ghpages --dir=dist/2025-1-ecommerce
    ```
-6. Tu aplicación estará disponible en:
+4. Tu aplicación estará disponible en:
    ```
    https://<tu-usuario>.github.io/2025-1-ecommerce/
    ```

@@ -1,0 +1,30 @@
+
+
+<div class="container mt-4">
+  <h2>Carrito de Compras</h2>
+
+  @if (carrito.length === 0) {
+    <div>El carrito está vacío.</div>
+
+  } @else {
+    
+    <div class="row">
+      @for (product of carrito; track product._id) {
+        <div class="card mb-3" style="width: 18rem; border-radius: 5px; border-color: beige; margin-right: 20px; align-items: center; margin-left: 5px;">
+          <div class="card-body">
+            <h5>{{ product.name }}</h5>
+            <p><i class="fa-solid fa-gamepad"></i><strong> Consola:</strong> {{ product.description }}</p>
+            <p><i class="fa-solid fa-map-pin"></i><strong> Destinatario:</strong> {{ product.destinatario }}</p>
+            <p><i class="fa-solid fa-address-book"></i><strong> Dirección:</strong> {{ product.address }}</p>
+            <p><i class="fa-solid fa-star"></i><strong> Cantidad:</strong> {{ product.quantity }}</p>
+            <p><i class="fa-solid fa-credit-card"></i><strong> Método de Pago:</strong> {{ product.paymentMethod }}</p>
+            <button class="btn btn-danger mt-2" (click)="deleteProducto(product._id)">Eliminar</button>            
+          </div>          
+        </div>  
+
+      } <button (click)="mostrarresumen()" class="btn btn-primary mt-2">{{textobtn}}</button>
+    </div> <div *ngIf="bandera"><app-confirmacion [productos]="carrito"></app-confirmacion></div>
+  } 
+</div>
+
+
