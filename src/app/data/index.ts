@@ -50,5 +50,53 @@ export const data:Product[] = [
         price:800,
  
     },
+    {
+        _id: 5,
+        name: "Dead Space Remake",
+        description: "Dead Space es un videojuego de disparos en tercera persona perteneciente al subgénero de terror y supervivencia desarrollado por EA Redwood Shores (hoy en día Visceral Games)",
+        quantity: 3,
+        image:"assets/images/DSR.jpg",
+        address:"",
+        paymentMethod:"",
+        destinatario:"",
+        price:1000,
+ 
+    },
+    {
+        _id: 6,
+        name: "Final Fantasy Remake",
+        description: "Final Fantasy VII Remake (ファイナルファンタジーVII リメイク Fainaru Fantajī VII Rimeiku?) es un videojuego de rol de acción, publicado por la empresa Square Enix inicialmente para la plataforma PlayStation 4",
+        quantity: 7,
+        image:"assets/images/FFVIIRemake.png",
+        address:"",
+        paymentMethod:"",
+        destinatario:"",
+        price:1200,
+ 
+    },
+    {
+        _id: 7,
+        name: "Resident Evil 4 Remake",
+        description: "Los jugadores controlan al agente estadounidense Leon S. Kennedy, quien debe salvar a Ashley Graham, la hija del presidente estadounidense, de una misteriosa secta en la España rural.",
+        quantity: 8,
+        image:"assets/images/RE4R.png",
+        address:"",
+        paymentMethod:"",
+        destinatario:"",
+        price:1200,
+ 
+    },
+    {
+        _id: 8,
+        name: "Metroid",
+        description: "es un videojuego de acción-aventura de 2021 de la serie Metroid, desarrollado por MercurySteam en colaboración con la filial Nintendo EPD y publicado por Nintendo para la consola Nintendo Switch.",
+        quantity: 10,
+        image:"assets/images/metroid.jpg",
+        address:"",
+        paymentMethod:"",
+        destinatario:"",
+        price:1200,
+ 
+    },
     
 ]
